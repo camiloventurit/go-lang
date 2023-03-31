@@ -23,6 +23,7 @@ func SearchMiddleware(db *gorm.DB) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		title := ctx.Query("title")
 		queryType := ctx.Query("queryType")
+		// year := ctx.Query("year")
 
 		//Petition
 		resp, err := http.Get("https://www.omdbapi.com/?" + queryType + "=" + title + "&apikey=936c6523")
